@@ -15,9 +15,11 @@ perform full production backups and manage entire infrastructures. We will
 finish off with the most complex and advanced pipelines that deliver big
 software at scale.
 
-## System Requirements
+## Pre-requisites
 
 * Linux, Windows or OS X (all 64bit)
 * [git](https://git-scm.com/downloads) client installed with Command Prompt / Terminal support
 * code editor of choice
 * browser of choice
+* GitHub acount
+* [@lrun/pipeline](https://github.com/orgs/lrun/teams/pipeline/members) team member
