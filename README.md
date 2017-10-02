@@ -1,5 +1,7 @@
 Workshop materials for **A pipeline to get you excited, London Ruby Unconference 2017**
 
+http://pipeline.gerhard.io
+
 ## Summary
 
 A hands-on training workshop where you will learn to visualise the code release
