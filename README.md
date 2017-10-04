@@ -8,20 +8,25 @@ A hands-on training workshop where you will learn to visualise the code release
 process as a pipeline and experience the possibilities that this concept
 unlocks.
 
-We will start by building a simple pipeline that will continuously deploy a
-Rails app. Within minutes, we will add zero-downtime deploys, tests, database
-migrations, and finish-off with auto-updates.
+You will start by building a simple pipeline that will continuously deploy a
+web app. Within minutes, you will make it production-ready, meaning:
 
-In the second part of the workshop, we will see examples of pipelines that
-perform full production backups and manage entire infrastructures. We will
-finish off with the most complex and advanced pipelines that deliver big
+* new commits will automatically update your web app
+* app will be always available, even as new versions are being deployed
+* versions of your app that don't work won't be promoted to live
+* 10x scale outs at the click of a button
+
+In the second part of the workshop, you will see examples of pipelines that
+perform full production backups and manage entire infrastructures. You will
+even experience the most complex and advanced pipelines that deliver big
 software at scale.
 
 ## Pre-requisites
 
-* Linux, Windows or OS X (all 64bit)
-* [git](https://git-scm.com/downloads) client installed with Command Prompt / Terminal support
+* Linux or OS X (all 64bit)
+* terminal
+* [git](https://git-scm.com/downloads)
+* openssl
+* make
 * code editor of choice
 * browser of choice
-* GitHub acount
-* [@lrun/pipeline](https://github.com/orgs/lrun/teams/pipeline/members) team member
