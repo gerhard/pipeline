@@ -1,8 +1,7 @@
-export PATH := $(shell pwd)/bin:$(PATH)
-
 URL     := https://ci.gerhard.io
 TEAM 	:= pipeline
-FLY 	:= fly --target p
+PATH    := $(shell pwd)/bin:$(PATH)
+FLY 	:= PATH=$(PATH) fly --target p
 CONF 	?= simple
 
 X 	:= openssl enc -aes-256-cbc -a
