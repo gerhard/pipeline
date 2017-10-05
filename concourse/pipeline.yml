@@ -1,0 +1,26 @@
+jobs:
+  - name: build
+    plan:
+      - get: dockerfile
+        trigger: true
+      - put: image
+        params:
+          build: dockerfile/concourse
+          push: true
+
+resources:
+  - name: dockerfile
+    type: git
+    source:
+      uri: https://github.com/gerhard/pipeline
+      branch: master
+      paths:
+        - concourse/Dockerfile
+
+  - name: image
+    type: docker-image
+    source:
+      repository: gerhard/pipeline
+      email: ((dockerhub_email))
+      username: ((dockerhub_user))
+      password: ((dockerhub_pass))
