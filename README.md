@@ -1,6 +1,6 @@
-Workshop materials for **A pipeline to get you excited, London Ruby Unconference 2017**
+Workshop materials for **A pipeline to get you excited**
 
-http://pipeline.gerhard.io
+https://pipeline.gerhard.io
 
 ## Summary
 
