@@ -14,6 +14,9 @@ default: help
 login: ## Login to CI
 	@$(FLY) login --concourse-url $(URL) --team-name $(TEAM)
 
+team:
+	@$(FLY) --target g set-team --team-name $(TEAM) --basic-auth-username $(U) --basic-auth-password $(P)
+
 secrets:
 	@$(X) -salt -in $(SECRETS) -out $(SECRETS).enc
 
