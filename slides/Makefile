@@ -4,7 +4,7 @@ slides: ## Run locally
 	@npm start
 
 public:## Deploy
-	@cf target -o gerhard -s lrun
+	@cf target -o gerhard -s pipeline
 	@cf push
 
 help:
