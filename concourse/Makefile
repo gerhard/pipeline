@@ -11,7 +11,7 @@ SECRETS := secrets.yml
 
 default: help
 
-login: ## Login to Concourse
+login: ## Login to CI
 	@$(FLY) login --concourse-url $(URL) --team-name $(TEAM)
 
 secrets:
