@@ -1,6 +1,4 @@
-Workshop materials for **A pipeline to get you excited**
-
-https://pipeline.gerhard.io
+[A pipeline to get you excited](https://pipeline.gerhard.io) - workshop materials
 
 ## Summary
 
