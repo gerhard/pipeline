@@ -4,6 +4,7 @@ SHELL 		:= env PATH=$(PATH) $(SHELL)
 URL     	:= https://ci.gerhard.io
 TEAM 		:= pipeline
 FLY 		:= fly --target p
+
 CONF 		:= $(PIPELINE)
 ifeq ($(CONF),)
 CONF 		:= simple
@@ -28,9 +29,9 @@ dec:
 	@$(X) -d -in $(SECRETS).x -out $(SECRETS)
 
 set: dec
-	@-$(FLY) set-pipeline --config $(CONF).yml --pipeline $(PIPELINE) --load-vars-from $(SECRETS) --var=user=$$USER
-	@-$(FLY) expose-pipeline --pipeline $(PIPELINE)
-	@-$(FLY) unpause-pipeline --pipeline $(PIPELINE)
+	@-$(FLY) set-pipeline --config $(CONF).yml --pipeline $(PIPELINE) --load-vars-from $(SECRETS) --var=user=$$USER && \
+	  $(FLY) expose-pipeline --pipeline $(PIPELINE) && \
+	  $(FLY) unpause-pipeline --pipeline $(PIPELINE)
 
 delete: ## Delete pipeline
 	$(FLY) destroy-pipeline --pipeline $(PIPELINE)
