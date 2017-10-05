@@ -9,7 +9,7 @@ inputs:
 - name: app
 
 run:
-  path: ./app/concourse/make.sh
+  path: ./app/slides/ci/make.sh
   dir: app
   args:
     - public
