@@ -17,7 +17,7 @@ jobs:
     plan:
       - get: app
       - task: make-public
-        file: slides/concourse/_make.yml
+        file: app/slides/ci/make.yml
         params:
           CF_API: ((cf_api))
           CF_ORG: ((cf_org))
