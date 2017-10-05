@@ -26,56 +26,107 @@
     <div class="reveal">
       <div class="slides">
         <section data-markdown>
-          <textarea data-template>
-            ## [A pipeline to get you excited](#/0)
-            ### London Ruby Unconference 2017
-            <small>http://pipeline.gerhard.io</small>
-          </textarea>
+          ## A pipeline to get you excited
+          <small>https://pipeline.gerhard.io</small>
+          Note: I believe that everything that can be automated, should.
+                I believe that shipping code should happen with minimal effort, none should be doing it manually.
+                I know that the most successful teams are the ones which are empowered to respond immediately as they learn more about the problems which they are solving.
+                Such teams cannot respond fast enough without an adequate automation story.
+                The humble pipeline is the heart of this automation.
+        </section>
+        <section data-markdown data-background-image="images/gerhard.png" data-background-size="20%" data-background-color="#FFF">
+        </section>
+        <section data-markdown data-background-image="images/pipeline.png">
+          ## [What is a pipeline?](#/2)
         </section>
         <section data-markdown>
-          ## One is [guaranteed to get you excited](#/1)
+          ## [Imagine if everything was](#/3)
+          ## automated by [a pipeline](#/3)
+          Note: Imagine if all the boring and repetitive work of getting your code to your users was automated.
+                Some of you might already be doing this, and some might be doing it for many years, maybe even a decade.
+                Now imagine if every single trivial task was automated by some pipeline.
+                I'm thinking testing, compiling, packaging, distributing, benchmarking, scaling and everything else in between.
+                Imagine if anything that can be run in a shell environment was automated...
+                Imagine all the things that you could be doing with the time that this would gain you...
+        </section>
+        <section data-markdown>
+          ## For some,
+          ## [everything is automated](#/4)
+          ## by a pipeline
+          Note: What if I told you that there are many companies out there that are doing just this?
+                This is everything from one-man bands to enterprises with tens of thousands of developers.
+                I want to show you what that means...
+        </section>
+        <section data-markdown>
+          ## Pipelines that [you will experience](#/5)
 
-          1. Simple pipeline
-          1. Production pipeline
+          1. Production web app pipeline
           1. Infrastructure pipeline
           1. Small OSS pipeline
           1. Large OSS pipeline
-          1. A pipeline-driven company
+
+          Note: One is guaranteed to get you excited...
         </section>
         <section data-markdown>
-          ## Pre-requisites
+          ## A pipeline that [you will build](#/6)
+
+          1. Production web app pipeline
+
+          Note: One is guaranteed to get you excited...
         </section>
-        <section data-markdown data-background-image="images/git-clone.png" data-background-position="top 800px center" data-background-size="60%">
-          I have the workshop files on my machine
+        <section data-markdown data-background-image="images/pipeline.png">
+          ## Focus on
+          ## [the pipeline concept](#/7)
+          Note: How you achieve that is irrelevant.
+                For the purpose of this workshop, I'm choosing Concourse, but that is an implementation detail.
+                Focus on the pipeline concept.
+        </section>
+        <section data-markdown>
+          ## Pre-requisites for a
+          ## [production web app pipeline](#/8)
+        </section>
+        <section data-markdown data-background-image="images/git-clone.png" data-background-position="top 800px center" data-background-size="80%">
+          ### [1/5](#/9) workshop repository
+        </section>
+        <section data-markdown data-background-image="images/fly.png" data-background-position="top 800px center" data-background-size="80%">
+          ### [2/5](#/10) fly cli
         </section>
         <section data-markdown data-background-image="images/ci.png" data-background-position="top 800px center" data-background-size="60%">
-          I can download `fly` from https://ci.gerhard.io
+          ### [2.1/5](#/11) fly cli
           Note: The easiest way to ensure that you have the correct fly version is to download it from the CI that you will be targeting
         </section>
-        <section data-markdown data-background-image="images/fly.png" data-background-position="top 800px center" data-background-size="60%">
-          I can `fly`
+        <section data-markdown data-background-image="images/make.png" data-background-position="top 800px center" data-background-size="80%">
+          ### [3/5](#/12) make
         </section>
-        <section data-markdown data-background-image="images/make.png" data-background-position="top 800px center" data-background-size="60%">
-          I can `make`
+        <section data-markdown data-background-image="images/make-login.png" data-background-position="top 800px center" data-background-size="80%">
+          ### [4/5](#/13) make login
         </section>
-        <section data-markdown data-background-image="images/make-login.png" data-background-position="top 800px center" data-background-size="60%">
-          I can login with `fly`
-
-          Note: `make login`
+        <section data-markdown data-background-image="images/openssl.png" data-background-position="top 800px center" data-background-size="80%">
+          ### [5/5](#/14) openssl
         </section>
         <section data-markdown>
-          ## Simple pipeline
+          ## Let's build a
+          ## [simple web app pipeline](#/15)
         </section>
-        <section data-markdown data-background-image="images/make-pipeline.png" data-background-position="top 800px center" data-background-size="60%">
-          I can configure a simple pipeline
+        <section data-markdown data-background-image="images/make-pipeline.png" data-background-size="80%">
+        </section>
+        <section data-markdown data-background-image="images/preview-pipeline.png" data-background-size="80%">
+          Note: make preview
+        </section>
+        <section data-markdown data-background="url(images/preview-pipeline.png) left 50px bottom -100px / 30% no-repeat, url(images/slides-resource.png) center bottom -100px / 30% no-repeat, url(images/slides-ref.png) right 50px bottom -100px / 30% no-repeat">
+          ## [slides](#/18) is a resource
 
-          Note: `make pipeline P=pipeline1`
-        </section>
-        <section data-markdown data-background-image="images/simple-pipeline.png" data-background-position="top 700px center" data-background-size="60%">
-          I can preview my simple pipeline
+          * it's an input resource
+          * of type git (it's a git repository)
+          * every git commit id is a different version
         </section>
         <section data-markdown data-background-image="images/X.png" data-background-position="top 800px center" data-background-size="60%">
-          I can run my simple pipeline
+          ## [make-public](#/19) is a job
+
+          * it has builds
+          * builds can be in different states
+          * every build has input versions
+          * it has tasks
         </section>
         <section data-markdown data-background-image="images/X.png" data-background-position="top 800px center" data-background-size="60%">
           I can access my simple app at http://[USER].pipeline.gerhard.io

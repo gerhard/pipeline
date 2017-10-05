@@ -20,11 +20,19 @@ secrets:
 $(SECRETS):
 	@$(X) -d -in $(SECRETS).enc -out $(SECRETS)
 
-set-pipeline: $(SECRETS)
-	@-$(FLY) set-pipeline --config $(CONF).yml --pipeline $$USER --load-vars-from $(SECRETS)
+set: $(SECRETS)
+	@-$(FLY) set-pipeline --config $(CONF).yml --pipeline $$USER --load-vars-from $(SECRETS) --var=user=$$USER
+	@-$(FLY) expose-pipeline --pipeline $$USER
+	@-$(FLY) unpause-pipeline --pipeline $$USER
 
-pipeline: set-pipeline ## Configure pipeline
+delete: ## Delete pipeline
+	$(FLY) delete-pipeline --pipeline $$USER
+
+pipeline: set ## Configure pipeline
 	@rm -f $(SECRETS)
+
+preview:## Preview pipeline
+	@open $(URL)/teams/$(TEAM)/pipelines/$$USER
 
 pipelines: ## List all pipelines
 	@$(FLY) pipelines
@@ -32,4 +40,4 @@ pipelines: ## List all pipelines
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: help login pipeline
+.PHONY: help secrets login pipeline pipelines preview

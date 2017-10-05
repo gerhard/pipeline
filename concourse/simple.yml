@@ -1,8 +1,13 @@
+groups:
+  - name: ((user))
+    jobs:
+      - make-public
+
 resources:
   - name: slides
     type: git
     source:
-      uri: https://github.com/lrun/pipeline
+      uri: https://github.com/gerhard/pipeline
       branch: master
       paths:
         - "slides"
@@ -15,7 +20,7 @@ jobs:
         file: slides/concourse/_make.yml
         params:
           CF_API: ((cf_api))
-          CF_USER: ((cf_user))
-          CF_PASS: ((cf_pass))
           CF_ORG: ((cf_org))
+          CF_PASS: ((cf_pass))
           CF_SPACE: ((cf_space))
+          CF_USER: ((cf_user))
