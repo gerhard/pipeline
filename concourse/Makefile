@@ -26,7 +26,7 @@ set: $(SECRETS)
 	@-$(FLY) unpause-pipeline --pipeline $$USER
 
 delete: ## Delete pipeline
-	$(FLY) delete-pipeline --pipeline $$USER
+	$(FLY) destroy-pipeline --pipeline $$USER
 
 pipeline: set ## Configure pipeline
 	@rm -f $(SECRETS)
