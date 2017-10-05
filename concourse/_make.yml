@@ -6,10 +6,10 @@ image_resource:
     repository: pivotalrabbitmq/cf-cli
 
 inputs:
-- name: pipeline
+- name: slides
 
 run:
-  path: ./pipeline/concourse/make.sh
-  dir: pipeline
+  path: ./slides/concourse/make.sh
+  dir: slides
   args:
     - public
