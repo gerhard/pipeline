@@ -1,7 +1,9 @@
+export PATH 	:=$(CURDIR)/bin:$(PATH)
+SHELL 	:= env PATH=$(PATH) $(SHELL)
+
 URL     := https://ci.gerhard.io
 TEAM 	:= pipeline
-PATH    := $(shell pwd)/bin:$(PATH)
-FLY 	:= PATH=$(PATH) fly --target p
+FLY 	:= fly --target p
 CONF 	?= simple
 
 X 	:= openssl enc -aes-256-cbc -a
@@ -18,13 +20,11 @@ secrets:
 $(SECRETS):
 	@$(X) -d -in $(SECRETS).enc -out $(SECRETS)
 
-safe:
-	@rm -f $(SECRETS)
-
-set-pipeline:
+set-pipeline: $(SECRETS)
 	@-$(FLY) set-pipeline --config $(CONF).yml --pipeline $$USER --load-vars-from $(SECRETS)
 
-pipeline: | $(SECRETS) set-pipeline safe ## Configure pipeline
+pipeline: set-pipeline ## Configure pipeline
+	@rm -f $(SECRETS)
 
 pipelines: ## List all pipelines
 	@$(FLY) pipelines
