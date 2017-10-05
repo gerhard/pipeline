@@ -4,7 +4,7 @@ groups:
       - make-public
 
 resources:
-  - name: slides
+  - name: app
     type: git
     source:
       uri: https://github.com/gerhard/pipeline
@@ -13,10 +13,10 @@ resources:
         - "slides"
 
 jobs:
-  - name: make-public
+  - name: deploy
     plan:
-      - get: slides
-      - task: public
+      - get: app
+      - task: make-public
         file: slides/concourse/_make.yml
         params:
           CF_API: ((cf_api))
