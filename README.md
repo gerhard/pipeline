@@ -7,7 +7,7 @@ process as a pipeline and experience the possibilities that this concept
 unlocks.
 
 You will start by building a simple pipeline that will continuously deploy a
-web app. Within minutes, you will make it production-ready, meaning:
+web app. Within minutes, you will make it production-ready:
 
 * new commits will automatically update your web app
 * app will be always available, even as new versions are being deployed
@@ -21,10 +21,10 @@ software at scale.
 
 ## Pre-requisites
 
-* Linux or OS X (all 64bit)
+* Linux or OS X
 * terminal
-* [git](https://git-scm.com/downloads)
+* git
 * openssl
 * make
-* code editor of choice
-* browser of choice
+* code editor
+* browser
