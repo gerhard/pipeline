@@ -21,35 +21,49 @@
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
+    <style type="text/css">
+      .reveal .white { color: #fff; }
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown>
+        <section data-markdown data-background="url(images/infrastructure.png) center bottom -40% / 90% no-repeat">
           ## [A pipeline](#/0)
           ### to get you excited
-          <small>https://github.com/gerhard/pipeline</small>
 
-          Note: I believe that everything that can be automated, should.
-                I believe that shipping code should happen with minimal effort, none should be doing it manually.
-                I know that the most successful teams are the ones which are empowered to respond immediately as they learn more about the problems which they are solving.
-                Such teams cannot respond fast enough without an adequate automation story.
-                The humble pipeline is the heart of this automation.
+          https://github.com/gerhard/pipeline
         </section>
-        <section data-markdown data-background-image="images/gerhard.png" data-background-size="contain">
+        <section data-markdown data-background="url(images/gerhard.png) 98% 18% / 20% no-repeat">
+          ## [Workshop preview](#/1)
+          * 30' - INTRO &amp; SETUP
+          * 15' - ☕ 🏓
+          * 30' - HANDS-ON LEARNING
+          * 15' - 🏓 ☕
+          * 30' - LEARN FROM OTHERS
         </section>
-        <section data-markdown data-background-image="images/pipeline.png">
-          ## [What is](#/2)
-          ### [a pipeline?](#/2)
+        <section data-markdown data-background="url(images/ci.png) center right -45% / 50% no-repeat">
+          ## [Intro](#/2) &amp; setup
+        </section>
+        <section data-background-image="images/pipeline.png">
+          <h2 class="white">What is <br/> a pipeline?</h2>
 
-          Note: This is what a pipeline looks like
-                Just lines and boxes, indistinguishable from everything else that we do
-                A pipeline is automation with feedback
+          <aside class="notes">
+            I believe that everything that can be automated, should.
+            I believe that shipping code should happen with minimal effort, none should be doing it manually.
+            I know that the most successful teams are the ones which are empowered to respond immediately as they learn more about the problems which they are solving.
+            Such teams cannot respond fast enough without an adequate automation story.
+            The humble pipeline is the heart of this automation.
+
+            This is what a pipeline looks like
+            Just lines and boxes, indistinguishable from everything else that we do
+            A pipeline is automation with feedback
+          </aside>
         </section>
         <section data-markdown>
-          ## [A pipeline automates](#/3)
-          ### the boring and the repetitive
-          Note: Imagine if all the boring and repetitive work of getting your code to your users was automated.
+          ## [A pipeline makes](#/4)
+          ### the repetitive always correct
+          Note: Imagine if getting the best of your work to your users was automated.
                 Some of you might already be doing this, and some might be doing it for many years, maybe even a decade.
                 Now imagine if every single trivial task was automated by some pipeline.
                 I'm thinking testing, compiling, packaging, distributing, benchmarking, scaling and everything else in between.
@@ -57,41 +71,23 @@
                 Imagine all the things that you could be doing with the time that this would gain you...
         </section>
         <section data-markdown>
-          ## [A pipeline is the secret](#/4)
+          ## [A pipeline is the secret](#/5)
           ### to happy &amp; successful teams
           Note: What if I told you that there are many companies out there that are doing just this?
                 This is everything from one-man bands to enterprises with tens of thousands of developers.
                 I want to show you what that means...
         </section>
         <section data-markdown>
-          ## 1/2 | [You will make](#/5)
-          ### A web app pipeline
-        </section>
-        <section data-markdown>
-          ## 2/2 | [You will get excited](#/6)
-
-          ### Infrastructure pipeline
-          ### Small OSS pipeline
-          ### Large OSS pipeline
-        </section>
-        <section data-markdown data-background-image="images/pipeline.png">
-          ## [Focus on](#/7)
-          ## [the pipeline](#/7)
-          Note: How you achieve that is irrelevant.
-                For the purpose of this workshop, I'm choosing Concourse, but that is an implementation detail.
-                Focus on the pipeline concept.
-        </section>
-        <section data-markdown>
           ## Pre-requisites for
-          ## [making your pipeline](#/8)
+          ## [making your pipeline](#/6)
         </section>
         <section data-markdown>
-          ## 1/5 | [workshop files](#/9)
+          ## 1/5 | [workshop files](#/7)
         </section>
         <section data-markdown data-background="url(images/git-clone.png) center / 75% no-repeat #fdf6e3">
         </section>
         <section data-markdown>
-          ## 2/5 | [fly](#/11)
+          ## 2/5 | [fly](#/9)
         </section>
         <section data-markdown data-background="url(images/fly.png) center / 75% no-repeat #fdf6e3">
         </section>
@@ -99,26 +95,32 @@
           Note: The easiest way to ensure that you have the correct fly version is to download it from the CI that you will be targeting
         </section>
         <section data-markdown>
-          ## 3/5 | [make](#/14)
+          ## 3/5 | [make](#/12)
         </section>
         <section data-markdown data-background="url(images/make.png) center / 75% no-repeat #fdf6e3">
         </section>
         <section data-markdown>
-          ## 4/5 | [openssl](#/16)
+          ## 4/5 | [openssl](#/14)
         </section>
         <section data-markdown data-background="url(images/openssl.png) center/75% no-repeat #fdf6e3">
         </section>
         <section data-markdown>
-          ## 5/5 | [login](#/18)
+          ## 5/5 | [login](#/16)
         </section>
         <section data-markdown data-background="url(images/make-login.png) center / 75% no-repeat #fdf6e3">
         </section>
         <section data-markdown>
-          ## Let's make a
-          ## [simple pipeline](#/20)
+          # ☕ [15'](#/18) BREAK 🏓
+        </section>
+
+        <section data-markdown data-background="url(images/green-simple.png) center right -45% / 50% no-repeat">
+          ## [Let's make](#/19)
+          ## a simple pipeline
           Note: `make simple`
         </section>
         <section data-markdown data-background="url(images/make-simple.png) center / 75% no-repeat #fdf6e3">
+        </section>
+        <section data-markdown data-background="url(images/make-preview.png) center / 75% no-repeat #fdf6e3">
         </section>
         <section data-markdown data-background="url(images/simple.png) center / 75% no-repeat">
           Note: `make preview`
@@ -126,12 +128,20 @@
                 `app` is an input to deploy - think STDOUT in the UNIX pipe context
                 `deploy` is a job - think unit of work
         </section>
+        <section data-markdown>
+          ## [Unpause](#/23)
+          ## your pipeline
+        </section>
         <section data-markdown data-background="url(images/unpause-simple.png) center / 75% no-repeat">
           Note: `make unpause`
         </section>
         <section data-markdown data-background="url(images/login.png) center / 75% no-repeat">
         </section>
         <section data-markdown data-background="url(images/unpaused-simple.png) center / 75% no-repeat">
+        </section>
+        <section data-markdown>
+          ## Manually
+          ## [trigger deploy](#/27)
         </section>
         <section data-markdown data-background="url(images/run-simple-deploy.png) center / 75% no-repeat">
         </section>
@@ -141,20 +151,24 @@
         </section>
         <section data-markdown data-background="url(images/green-simple.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background="url(images/app-resource.png) center bottom -30% / 50% no-repeat">
-          ## App is a [resource](#/29)
-
-          Note: - it's a resource of type git
+        <section data-markdown>
+          ## What is [app](#/32)?
+        </section>
+        <section data-markdown data-background="url(images/app-resource.png) center / 75% no-repeat">
+          Note: App is a resource
+                - of type git
                 - it's a git repository
                 - every git commit is a different version
                 - the resource's version determines the job artefact
                 - it acts both as an input and output
                 - this is a very simple and powerful concept that scales really well
         </section>
-        <section data-markdown data-background="url(images/deploy-job.png) center bottom -30% / 50% no-repeat">
-          ## Deploy is a [job](#/30)
-
-          Note: - every job has builds
+        <section data-markdown>
+          ## What is [deploy](#/34)?
+        </section>
+        <section data-markdown data-background="url(images/deploy-job.png) center / 75% no-repeat">
+          Note: Deploy is a job
+                - every job has builds
                 - builds can be in different states
                 - every build has input versions
                 - a job has tasks
@@ -164,62 +178,105 @@
                 It also has 1 task called make-public for which you can see the output when the job builds.
         </section>
         <section data-markdown>
-          ## So what did you [deploy](#/32)?
+          ## So what did you [deploy](#/37)?
         </section>
         <section data-markdown data-background="url(images/deploy.png) center / 75% no-repeat">
         </section>
-        <section data-markdown>
-          ## Let's make a
-          ## [production pipeline](#/34)
+        <section data-markdown data-background="url(images/all-green-production.png) center right -45% / 50% no-repeat">
+          ## [Let's make](#/39) your
+          ### production pipeline
           Note: `make production`
         </section>
         <section data-markdown data-background="url(images/make-production.png) center / 75% no-repeat #fdf6e3">
         </section>
+        <section data-markdown>
+          ## The push job
+          ## [auto-triggers](#/41)
+        </section>
         <section data-markdown data-background="url(images/trigger-production.png) center / 75% no-repeat">
-          Note: `make preview`
+        </section>
+        <section data-markdown>
+          ## The push job has
+          ## [1 input](#/43) &amp; [1 output ](#/43)
+          Note: No tasks...
         </section>
         <section data-markdown data-background="url(images/building-production.png) center / 75% no-repeat">
+        </section>
+        <section data-markdown>
+          ## New app version
+          ## [0-downtime deploy](#/45)
+          Note: It took 1 line of YAML configuration
         </section>
         <section data-markdown data-background="url(images/pass-production.png) center / 75% no-repeat">
         </section>
         <section data-markdown>
-          ## time resource
+          ## App auto-scales
+          ## [based on time of day](#/47)
+        </section>
+        <section data-markdown data-background="url(images/scale-in.png) center / 75% no-repeat">
+        </section>
+        <section data-markdown data-background="url(images/all-green-production.png) center / 75% no-repeat">
         </section>
         <section data-markdown>
-          ## scale jobs
+          # ☕ [15'](#/50) BREAK 🏓
         </section>
-        <section data-markdown data-background="url(images/green-production.png) center bottom -40% / 50% no-repeat">
-          ##  ☕ [BREAK](#/42) 🏓
+
+        <section data-markdown data-background="url(images/large-oss-dashboard.png) center right -45% / 50% no-repeat">
+          # [Learn](#/51)
+          ## from others
+        </section>
+        <section data-markdown>
+          ## [Infrastructure](#/52) pipeline
+        </section>
+        <section data-markdown data-background="url(images/infrastructure-slack.png) bottom right / 20% no-repeat, url(images/infrastructure.png) center / 90% no-repeat">
+        </section>
+        <section data-markdown data-background="url(images/infrastructure-base.png) center / 75% no-repeat">
+        </section>
+        <section data-markdown data-background="url(images/infrastructure-backup.png) center / 75% no-repeat">
         </section>
 
         <section data-markdown>
-          ## 2/2 | [You will get excited](#/6)
+          ## [Small OSS](#/56) pipeline
+        </section>
+        <section data-markdown data-background="url(images/small-oss.png) center / 90% no-repeat">
+        </section>
+        <section data-markdown data-background="url(images/small-oss-image.png) center / 75% no-repeat">
+        </section>
+        <section data-markdown data-background="url(images/small-oss-configure.png) center / 75% no-repeat">
+        </section>
+        <section data-markdown data-background="url(images/small-oss-deploy.png) center / 75% no-repeat">
+        </section>
 
-          ### Infrastructure pipeline
-          ### Small OSS pipeline
-          ### Large OSS pipeline
+        <section data-markdown>
+          ## [Large OSS](#/61) pipeline
         </section>
-        <section data-markdown data-background-image="images/infrastructure-pipeline-W.png" data-background-position="top 800px center" data-background-size="60%">
-          ## Infrastructure pipeline
+        <section data-markdown data-background="url(images/large-oss.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/infrastructure-pipeline-W.png" data-background-size="90%">
+        <section data-markdown data-background="url(images/large-oss-plugins.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/small-oss-pipeline-W.png" data-background-position="top 800px center" data-background-size="60%">
-          ## Small OSS pipeline
+        <section data-markdown data-background="url(images/large-oss-pkg.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/small-oss-pipeline-W.png" data-background-size="90%">
+        <section data-markdown data-background="url(images/large-oss-upgrades.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/large-oss-pipeline.png" data-background-position="top 800px center" data-background-size="60%">
-          ## Large OSS pipeline
+        <section data-markdown data-background="url(images/large-oss-plugins2.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/large-oss-pipeline-W.png" data-background-size="90%">
+        <section data-markdown data-background="url(images/large-oss-clients.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/large-oss-pipeline-W2.png" data-background-size="90%">
+        <section data-markdown data-background="url(images/large-oss-alpha.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/pipeline-driven-company-W.png" data-background-position="top 800px center" data-background-size="60%">
-          ## A pipeline-driven company
+        <section data-markdown data-background="url(images/large-oss-alpha2.png) center / 75% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/pipeline-driven-company-W.png" data-background-size="90%">
+        <section data-markdown data-background="url(images/large-oss-dashboard.png) center / 75% no-repeat">
+        </section>
+
+        <section data-markdown>
+          ## [Pipeline-driven](#/71) company
+        </section>
+        <section data-markdown data-background="url(images/pipeline-driven-company.png) center / 75% no-repeat">
+        </section>
+
+        <section data-markdown data-background="url(images/concourse-black.png) bottom right / 25% no-repeat">
+          # [Q](#/73) &amp; [A](#/73)
         </section>
       </div>
     </div>
