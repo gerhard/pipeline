@@ -19,6 +19,7 @@ jobs:
       - task: make-public
         file: app/slides/ci/make.yml
         params:
+          TARGET: public
           CF_API: ((cf_api))
           CF_ORG: ((cf_org))
           CF_PASS: ((cf_pass))

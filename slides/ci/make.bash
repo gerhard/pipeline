@@ -4,4 +4,4 @@ set -e
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"/..
 
-make "$@"
+make "$TARGET"

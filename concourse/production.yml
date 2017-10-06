@@ -1,0 +1,64 @@
+groups:
+  - name: ((user))
+    jobs:
+      - deploy
+      - scale
+
+resources:
+  - name: app
+    type: git
+    source:
+      uri: https://github.com/gerhard/pipeline
+      branch: master
+      paths:
+        - "slides"
+
+  - name: cf
+    type: cf
+    source:
+      api: ((cf_api))
+      organization: ((cf_org))
+      password: ((cf_pass))
+      space: ((cf_space))
+      username: ((cf_user))
+
+jobs:
+  - name: deploy
+    serial: true
+    plan:
+      - get: app
+        trigger: true
+      - put: cf
+        params:
+          manifest: app/slides/manifest.yml
+          current_app_name: pipeline
+
+  - name: scale-up
+    serial: true
+    plan:
+      - get: app
+      - task: make-scale
+        file: app/slides/ci/make.yml
+        params:
+          TARGET: scale
+          INSTANCES: 10
+          CF_API: ((cf_api))
+          CF_ORG: ((cf_org))
+          CF_PASS: ((cf_pass))
+          CF_SPACE: ((cf_space))
+          CF_USER: ((cf_user))
+
+  - name: scale-down
+    serial: true
+    plan:
+      - get: app
+      - task: make-scale
+        file: app/slides/ci/make.yml
+        params:
+          TARGET: scale
+          INSTANCES: 2
+          CF_API: ((cf_api))
+          CF_ORG: ((cf_org))
+          CF_PASS: ((cf_pass))
+          CF_SPACE: ((cf_space))
+          CF_USER: ((cf_user))
