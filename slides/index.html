@@ -26,15 +26,15 @@
     <div class="reveal">
       <div class="slides">
         <section data-markdown>
-          ## A pipeline to get you excited
-          <small>https://pipeline.gerhard.io</small>
+          ## A [pipeline](#/0) to get you excited
+          <small>https://github.com/gerhard/pipeline</small>
           Note: I believe that everything that can be automated, should.
                 I believe that shipping code should happen with minimal effort, none should be doing it manually.
                 I know that the most successful teams are the ones which are empowered to respond immediately as they learn more about the problems which they are solving.
                 Such teams cannot respond fast enough without an adequate automation story.
                 The humble pipeline is the heart of this automation.
         </section>
-        <section data-markdown data-background-image="images/gerhard.png" data-background-size="20%" data-background-color="#FFF">
+        <section data-markdown data-background-image="images/gerhard.png" data-background-size="contain" data-background-color="#FFF">
         </section>
         <section data-markdown data-background-image="images/pipeline.png">
           ## [What is a pipeline?](#/2)
@@ -58,7 +58,8 @@
                 I want to show you what that means...
         </section>
         <section data-markdown>
-          ## Pipelines that [you will experience](#/5)
+          ## Pipelines that
+          ## [will make you excited](#/5)
 
           1. Production web app pipeline
           1. Infrastructure pipeline
@@ -68,7 +69,8 @@
           Note: One is guaranteed to get you excited...
         </section>
         <section data-markdown>
-          ## A pipeline that [you will build](#/6)
+          ## A pipeline that
+          ## [you will build](#/6)
 
           1. Production web app pipeline
 
@@ -85,54 +87,62 @@
           ## Pre-requisites for a
           ## [production web app pipeline](#/8)
         </section>
-        <section data-markdown data-background-image="images/git-clone.png" data-background-position="top 800px center" data-background-size="80%">
+        <section data-markdown>
           ### [1/5](#/9) workshop repository
         </section>
-        <section data-markdown data-background-image="images/fly.png" data-background-position="top 800px center" data-background-size="80%">
+        <section data-markdown data-background="url(images/git-clone.png) center/80% no-repeat">
+        </section>
+        <section data-markdown>
           ### [2/5](#/10) fly cli
         </section>
-        <section data-markdown data-background-image="images/ci.png" data-background-position="top 800px center" data-background-size="60%">
-          ### [2.1/5](#/11) fly cli
+        <section data-markdown data-background="url(images/fly.png) center/80% no-repeat">
+        </section>
+        <section data-markdown data-background="url(images/ci.png) center/80% no-repeat">
           Note: The easiest way to ensure that you have the correct fly version is to download it from the CI that you will be targeting
         </section>
-        <section data-markdown data-background-image="images/make.png" data-background-position="top 800px center" data-background-size="80%">
-          ### [3/5](#/12) make
+        <section data-markdown>
+          ### [3/5](#/14) make
         </section>
-        <section data-markdown data-background-image="images/make-login.png" data-background-position="top 800px center" data-background-size="80%">
-          ### [4/5](#/13) make login
+        <section data-markdown data-background="url(images/make.png) center/80% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/openssl.png" data-background-position="top 800px center" data-background-size="80%">
-          ### [5/5](#/14) openssl
+        <section data-markdown>
+          ### [4/5](#/16) make login
+        </section>
+        <section data-markdown data-background="url(images/make-login.png) center/80% no-repeat">
+        </section>
+        <section data-markdown>
+          ### [5/5](#/18) openssl
+        </section>
+        <section data-markdown data-background="url(images/openssl.png) center/80% no-repeat">
         </section>
         <section data-markdown>
           ## Let's build a
-          ## [simple web app pipeline](#/15)
+          ## [simple web app pipeline](#/20)
         </section>
-        <section data-markdown data-background-image="images/make-pipeline.png" data-background-size="80%">
+        <section data-markdown data-background="url(images/make-simple-pipeline.png) center/80% no-repeat">
         </section>
-        <section data-markdown data-background-image="images/preview-pipeline.png" data-background-size="80%">
+        <section data-markdown data-background="url(images/preview-pipeline.png) center/80% no-repeat">
           Note: make preview
         </section>
-        <section data-markdown data-background="url(images/preview-pipeline.png) left 50px bottom -100px / 30% no-repeat, url(images/slides-resource.png) center bottom -100px / 30% no-repeat, url(images/slides-ref.png) right 50px bottom -100px / 30% no-repeat">
-          ## [slides](#/18) is a resource
+        <section data-markdown data-background="url(images/resource.png) center bottom -15% / 30% no-repeat, url(images/resource-version.png) right 50px bottom -15% / 30% no-repeat">
+          ## App is a [resource](#/23)
 
           * it's an input resource
-          * of type git (it's a git repository)
-          * every git commit id is a different version
+          * of type git - it's a git repository
+          * every git commit is a different version
+          * the version is an input to a job
         </section>
-        <section data-markdown data-background-image="images/X.png" data-background-position="top 800px center" data-background-size="60%">
-          ## [make-public](#/19) is a job
+        <section data-markdown data-background="url(images/job.png) center bottom -15% / 30% no-repeat, url(images/job-task.png) right 50px bottom -15% / 30% no-repeat">
+          ## Deploy is a [job](#/24)
 
-          * it has builds
+          * every job has builds
           * builds can be in different states
           * every build has input versions
-          * it has tasks
-        </section>
-        <section data-markdown data-background-image="images/X.png" data-background-position="top 800px center" data-background-size="60%">
-          I can access my simple app at http://[USER].pipeline.gerhard.io
+          * a job has tasks
         </section>
         <section data-markdown>
-          ## Production pipeline
+          ## Let's make a
+          ## [production web app pipeline](#/25)
         </section>
         <section data-markdown data-background-image="images/infrastructure-pipeline-W.png" data-background-position="top 800px center" data-background-size="60%">
           ## Infrastructure pipeline
