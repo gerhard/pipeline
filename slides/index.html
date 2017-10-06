@@ -26,8 +26,10 @@
     <div class="reveal">
       <div class="slides">
         <section data-markdown>
-          ## A [pipeline](#/0) to get you excited
+          ## [A pipeline](#/0)
+          ### to get you excited
           <small>https://github.com/gerhard/pipeline</small>
+
           Note: I believe that everything that can be automated, should.
                 I believe that shipping code should happen with minimal effort, none should be doing it manually.
                 I know that the most successful teams are the ones which are empowered to respond immediately as they learn more about the problems which they are solving.
@@ -38,11 +40,15 @@
         </section>
         <section data-markdown data-background-image="images/pipeline.png">
           ## [What is](#/2)
-          ## [a pipeline?](#/2)
+          ### [a pipeline?](#/2)
+
+          Note: This is what a pipeline looks like
+                Just lines and boxes, indistinguishable from everything else that we do
+                A pipeline is automation with feedback
         </section>
         <section data-markdown>
-          ## [Imagine if everything was](#/3)
-          ## automated by [a pipeline](#/3)
+          ## [A pipeline automates](#/3)
+          ### the boring and the repetitive
           Note: Imagine if all the boring and repetitive work of getting your code to your users was automated.
                 Some of you might already be doing this, and some might be doing it for many years, maybe even a decade.
                 Now imagine if every single trivial task was automated by some pipeline.
@@ -51,48 +57,41 @@
                 Imagine all the things that you could be doing with the time that this would gain you...
         </section>
         <section data-markdown>
-          ## For some,
-          ## [everything is automated](#/4)
-          ## by a pipeline
+          ## [A pipeline is the secret](#/4)
+          ### to happy &amp; successful teams
           Note: What if I told you that there are many companies out there that are doing just this?
                 This is everything from one-man bands to enterprises with tens of thousands of developers.
                 I want to show you what that means...
         </section>
         <section data-markdown>
-          ## [1/2](#/5) A pipeline that
-          ## [you will make](#/5)
-
-          1. Pre-requisites
-          1. Production web app pipeline
+          ## 1/2 | [You will make](#/5)
+          ### A web app pipeline
         </section>
         <section data-markdown>
-          ## [2/2](#/6) Pipelines that
-          ## [will make you excited](#/6)
+          ## 2/2 | [You will get excited](#/6)
 
-          1. Infrastructure pipeline
-          1. Small OSS pipeline
-          1. Large OSS pipeline
-
-          Note: One is guaranteed to get you excited...
+          ### Infrastructure pipeline
+          ### Small OSS pipeline
+          ### Large OSS pipeline
         </section>
         <section data-markdown data-background-image="images/pipeline.png">
           ## [Focus on](#/7)
-          ## [the pipeline concept](#/7)
+          ## [the pipeline](#/7)
           Note: How you achieve that is irrelevant.
                 For the purpose of this workshop, I'm choosing Concourse, but that is an implementation detail.
                 Focus on the pipeline concept.
         </section>
         <section data-markdown>
-          ## [Pre-requisites](#/8) for
-          ## making your pipeline
+          ## Pre-requisites for
+          ## [making your pipeline](#/8)
         </section>
         <section data-markdown>
-          ## [1/5](#/9) workshop repository
+          ## 1/5 | [workshop files](#/9)
         </section>
         <section data-markdown data-background="url(images/git-clone.png) center / 75% no-repeat #fdf6e3">
         </section>
         <section data-markdown>
-          ## [2/5](#/11) fly cli
+          ## 2/5 | [fly](#/11)
         </section>
         <section data-markdown data-background="url(images/fly.png) center / 75% no-repeat #fdf6e3">
         </section>
@@ -100,30 +99,35 @@
           Note: The easiest way to ensure that you have the correct fly version is to download it from the CI that you will be targeting
         </section>
         <section data-markdown>
-          ## [3/5](#/14) make
+          ## 3/5 | [make](#/14)
         </section>
         <section data-markdown data-background="url(images/make.png) center / 75% no-repeat #fdf6e3">
         </section>
         <section data-markdown>
-          ## [4/5](#/16) make login
-        </section>
-        <section data-markdown data-background="url(images/make-login.png) center / 75% no-repeat #fdf6e3">
-        </section>
-        <section data-markdown>
-          ## [5/5](#/18) openssl
+          ## 4/5 | [openssl](#/16)
         </section>
         <section data-markdown data-background="url(images/openssl.png) center/75% no-repeat #fdf6e3">
         </section>
         <section data-markdown>
+          ## 5/5 | [login](#/18)
+        </section>
+        <section data-markdown data-background="url(images/make-login.png) center / 75% no-repeat #fdf6e3">
+        </section>
+        <section data-markdown>
           ## Let's make a
-          ## [simple web app pipeline](#/20)
+          ## [simple pipeline](#/20)
           Note: `make simple`
         </section>
         <section data-markdown data-background="url(images/make-simple.png) center / 75% no-repeat #fdf6e3">
         </section>
-        <section data-markdown data-background="url(images/unpause-simple.png) center / 75% no-repeat">
-          Note: `make preview` &amp; `make unpause`
+        <section data-markdown data-background="url(images/simple.png) center / 75% no-repeat">
+          Note: `make preview`
                 This is a pipeline with: 1 resource called app &amp; 1 job called deploy
+                `app` is an input to deploy - think STDOUT in the UNIX pipe context
+                `deploy` is a job - think unit of work
+        </section>
+        <section data-markdown data-background="url(images/unpause-simple.png) center / 75% no-repeat">
+          Note: `make unpause`
         </section>
         <section data-markdown data-background="url(images/login.png) center / 75% no-repeat">
         </section>
@@ -136,25 +140,24 @@
         <section data-markdown data-background="url(images/pass-log-simple-deploy.png) center / 75% no-repeat">
         </section>
         <section data-markdown data-background="url(images/green-simple.png) center / 75% no-repeat">
-          Note: What is a resource? And what is a job?
         </section>
         <section data-markdown data-background="url(images/app-resource.png) center bottom -30% / 50% no-repeat">
           ## App is a [resource](#/29)
 
-          Note: * it's an input resource
-                * of type git - it's a git repository
-                * every git commit is a different version
-                * the version is an input and output to a build
-
-                What is a build?
+          Note: - it's a resource of type git
+                - it's a git repository
+                - every git commit is a different version
+                - the resource's version determines the job artefact
+                - it acts both as an input and output
+                - this is a very simple and powerful concept that scales really well
         </section>
         <section data-markdown data-background="url(images/deploy-job.png) center bottom -30% / 50% no-repeat">
           ## Deploy is a [job](#/30)
 
-          Note: * every job has builds
-                * builds can be in different states
-                * every build has input versions
-                * a job has tasks
+          Note: - every job has builds
+                - builds can be in different states
+                - every build has input versions
+                - a job has tasks
         </section>
         <section data-markdown data-background="url(images/job-task.png) center / 75% no-repeat">
           Note: Your deploy job has 1 input, app with a version.
@@ -167,7 +170,7 @@
         </section>
         <section data-markdown>
           ## Let's make a
-          ## [production web app pipeline](#/34)
+          ## [production pipeline](#/34)
           Note: `make production`
         </section>
         <section data-markdown data-background="url(images/make-production.png) center / 75% no-repeat #fdf6e3">
@@ -180,24 +183,22 @@
         <section data-markdown data-background="url(images/pass-production.png) center / 75% no-repeat">
         </section>
         <section data-markdown>
-          ## So what did you
-          ## [push to paas](#/39)?
+          ## time resource
         </section>
-        <section data-markdown data-background="url(images/deploy.png) center / 75% no-repeat">
+        <section data-markdown>
+          ## scale jobs
         </section>
         <section data-markdown data-background="url(images/green-production.png) center bottom -40% / 50% no-repeat">
-          ##  ☕ [BREAK](#/41) 🏓
+          ##  ☕ [BREAK](#/42) 🏓
         </section>
 
         <section data-markdown>
-          ## Pipelines that
-          ## [will make you excited](#/34)
+          ## 2/2 | [You will get excited](#/6)
 
-          1. Infrastructure pipeline
-          1. Small OSS pipeline
-          1. Large OSS pipeline
+          ### Infrastructure pipeline
+          ### Small OSS pipeline
+          ### Large OSS pipeline
         </section>
-
         <section data-markdown data-background-image="images/infrastructure-pipeline-W.png" data-background-position="top 800px center" data-background-size="60%">
           ## Infrastructure pipeline
         </section>
