@@ -23,6 +23,21 @@ resources:
       space: ((cf_space))
       username: ((cf_user))
 
+  - name: morning
+    type: time
+    source:
+      start: 9:00 AM
+      stop: 9:10 AM
+      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+
+  - name: evening
+    type: time
+    source:
+      start: 6:00 PM
+      stop: 6:10 PM
+      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+
+
 jobs:
   - name: deploy
     serial: true
@@ -42,6 +57,8 @@ jobs:
       - app
     plan:
       - get: app
+      - get: morning
+        trigger: true
       - task: make-scale
         file: app/slides/ci/make.yml
         params:
@@ -59,6 +76,8 @@ jobs:
       - app
     plan:
       - get: app
+      - get: evening
+        trigger: true
       - task: make-scale
         file: app/slides/ci/make.yml
         params:
