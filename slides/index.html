@@ -70,7 +70,7 @@
         </section>
         <section data-markdown>
           ## A pipeline that
-          ## [you will build](#/6)
+          ## [you will make](#/6)
 
           1. Production web app pipeline
 
@@ -84,16 +84,16 @@
                 Focus on the pipeline concept.
         </section>
         <section data-markdown>
-          ## Pre-requisites for a
-          ## [production web app pipeline](#/8)
+          ## [Pre-requisites](#/8) for
+          ## making your pipeline
         </section>
         <section data-markdown>
-          ### [1/5](#/9) workshop repository
+          ## [1/5](#/9) workshop repository
         </section>
         <section data-markdown data-background="url(images/git-clone.png) center/80% no-repeat">
         </section>
         <section data-markdown>
-          ### [2/5](#/10) fly cli
+          ## [2/5](#/10) fly cli
         </section>
         <section data-markdown data-background="url(images/fly.png) center/80% no-repeat">
         </section>
@@ -101,28 +101,31 @@
           Note: The easiest way to ensure that you have the correct fly version is to download it from the CI that you will be targeting
         </section>
         <section data-markdown>
-          ### [3/5](#/14) make
+          ## [3/5](#/14) make
         </section>
         <section data-markdown data-background="url(images/make.png) center/80% no-repeat">
         </section>
         <section data-markdown>
-          ### [4/5](#/16) make login
+          ## [4/5](#/16) make login
         </section>
         <section data-markdown data-background="url(images/make-login.png) center/80% no-repeat">
         </section>
         <section data-markdown>
-          ### [5/5](#/18) openssl
+          ## [5/5](#/18) openssl
         </section>
         <section data-markdown data-background="url(images/openssl.png) center/80% no-repeat">
         </section>
         <section data-markdown>
-          ## Let's build a
+          ## Let's make a
           ## [simple web app pipeline](#/20)
+          Note: `make simple`
         </section>
-        <section data-markdown data-background="url(images/make-simple-pipeline.png) center/80% no-repeat">
+        <section data-markdown data-background="url(images/make-simple.png) center/80% no-repeat">
         </section>
-        <section data-markdown data-background="url(images/preview-pipeline.png) center/80% no-repeat">
-          Note: make preview
+        <section data-markdown data-background="url(images/preview-simple.png) center/80% no-repeat">
+          Note: `make preview`
+                This is a pipeline with: 1 resource called app &amp; 1 job called deploy
+                What is a resource? And what is a job?
         </section>
         <section data-markdown data-background="url(images/resource.png) center bottom -15% / 30% no-repeat, url(images/resource-version.png) right 50px bottom -15% / 30% no-repeat">
           ## App is a [resource](#/23)
@@ -132,17 +135,34 @@
           * every git commit is a different version
           * the version is an input to a job
         </section>
+        <section data-markdown data-background="url(images/resource-version.png) center/80% no-repeat">
+          Note: A resource has many versions.
+                For your app resource which is of type git, every git commit is a different version.
+        </section>
         <section data-markdown data-background="url(images/job.png) center bottom -15% / 30% no-repeat, url(images/job-task.png) right 50px bottom -15% / 30% no-repeat">
-          ## Deploy is a [job](#/24)
+          ## Deploy is a [job](#/25)
 
           * every job has builds
           * builds can be in different states
           * every build has input versions
           * a job has tasks
         </section>
+        <section data-markdown data-background="url(images/job-task.png) center/80% no-repeat">
+          Note: Your deploy job has 1 input, app with a version.
+                It also has 1 task called make-public for which you can see the output when the job builds.
+        </section>
         <section data-markdown>
           ## Let's make a
-          ## [production web app pipeline](#/25)
+          ## [production web app pipeline](#/27)
+          Note: `make production`
+        </section>
+        <section data-markdown data-background="url(images/make-production.png) center/80% no-repeat">
+        </section>
+        <section data-markdown data-background="url(images/preview-production.png) center/80% no-repeat">
+          Note: `make preview`
+        </section>
+        <section data-markdown data-background="url(images/unpause-production.png) center/80% no-repeat">
+          Note: `make unpause`
         </section>
         <section data-markdown data-background-image="images/infrastructure-pipeline-W.png" data-background-position="top 800px center" data-background-size="60%">
           ## Infrastructure pipeline
