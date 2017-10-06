@@ -3,3 +3,4 @@ buildpack: staticfile_buildpack
 memory: 32M
 instances: 2
 domain: gerhard.io
+path: .
