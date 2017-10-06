@@ -9,7 +9,7 @@ CONF 		:= $(PIPELINE)
 ifeq ($(CONF),)
 CONF 		:= simple
 endif
-PIPELINE 	?= $$USER
+PIPELINE 	?= $(USER)
 
 X 		:= openssl enc -aes-256-cbc -a
 SECRETS 	?= secrets
@@ -29,7 +29,7 @@ dec:
 	@$(X) -d -in $(SECRETS).x -out $(SECRETS)
 
 set: dec
-	@-$(FLY) set-pipeline --config $(CONF).yml --pipeline $(PIPELINE) --load-vars-from $(SECRETS) --var=user=$$USER && \
+	@-$(FLY) set-pipeline --config $(CONF).yml --pipeline $(PIPELINE) --load-vars-from $(SECRETS) --var=user=$(USER) && \
 	  $(FLY) expose-pipeline --pipeline $(PIPELINE) && \
 	  $(FLY) unpause-pipeline --pipeline $(PIPELINE)
 
