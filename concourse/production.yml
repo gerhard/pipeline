@@ -26,6 +26,8 @@ resources:
 jobs:
   - name: deploy
     serial: true
+    serial_groups:
+      - app
     plan:
       - get: app
         trigger: true
@@ -36,6 +38,8 @@ jobs:
 
   - name: scale-out
     serial: true
+    serial_groups:
+      - app
     plan:
       - get: app
       - task: make-scale
@@ -51,6 +55,8 @@ jobs:
 
   - name: scale-in
     serial: true
+    serial_groups:
+      - app
     plan:
       - get: app
       - task: make-scale
