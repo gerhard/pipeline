@@ -20,7 +20,7 @@ default: help
 dec:
 	@$(X) -d -in $(SECRETS).x -out $(SECRETS)
 
-delete: ## Delete pipeline
+destroy:## Destroy pipeline
 	$(FLY) destroy-pipeline --pipeline $(PIPELINE)
 
 enc:
@@ -62,4 +62,4 @@ team:
 unpause: ## Unpause pipeline
 	@-$(FLY) unpause-pipeline --pipeline $(PIPELINE)
 
-.PHONY: dec delete enc help login pipeline pipelines preview production set set-pipeline simple team unpause
+.PHONY: dec destroy enc help login pipeline pipelines preview production set set-pipeline simple team unpause
