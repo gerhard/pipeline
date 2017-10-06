@@ -1,7 +1,7 @@
 groups:
   - name: ((user))
     jobs:
-      - deploy
+      - push
       - scale-out
       - scale-in
 
@@ -39,7 +39,7 @@ resources:
 
 
 jobs:
-  - name: deploy
+  - name: push
     serial: true
     serial_groups:
       - app
