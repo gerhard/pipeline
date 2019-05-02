@@ -14,7 +14,7 @@ target:
 
 
 public: target ## Deploy app
-	@cf push $(APP)
+	@cf push -d gerhard.io $(APP)
 
 scale: 	target ## Scale deployed app
 	@cf scale $(APP) -i $(INSTANCES)
